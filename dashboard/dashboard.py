@@ -94,13 +94,6 @@ with st.sidebar:
         value=[min_date, max_date]
     )
 
-    st.subheader('About Dataset')
-    st.markdown('''
-                Bike sharing systems are new generation of traditional 
-                bike rentals where whole process from membership, 
-                rental and return back has become automatic. 
-                Through these systems, user is able to easily rent a bike 
-                from a particular position and return back at another position.''')
 
 main_df = df_bike[(df_bike["dteday"] >= str(start_date)) &
                   (df_bike["dteday"] <= str(end_date))]
@@ -197,14 +190,3 @@ ax[1].tick_params(axis='y', labelsize=12)
 plt.suptitle("Most and Less Rental Bike Hours", fontsize=20)
 st.pyplot(fig)
 
-st.subheader('Conclusion')
-st.markdown('''
-**1. Bagaimana demografi pengguna sepeda?**
-- Berdasarkan visualisasi di atas demografi pelanggan berdasarkan season, pelanggan yang menyewa sepeda lebih banyak pada musim panas (Summer) dan paling sedikit pada musim salju (Winter).
-- Berdasarkan Weather Condition atau sistuasi cuaca, banyak pelanggan menyewa sepeda pada cuaca cerah (Mostly Clear) dan sedikit pada cuaca hujan atau salju (Heavy Rain/Snow).
-- Berdasarkan Working day atau hari kerja dan seasonnya, banyak pelanggan menyewa sepeda pada musim panas di hari kerja (bernilai 1) dibandingkan hari libur.
-
-**2. Pada jam berapa paling banyak dan sedikit pengguna menyewa sepeda?**
-- Pengguna menyewa sepeda paling banyak pada jam 17 diikuti jam 18. 
-- Paling sedikit pada jam 4 pagi diikuti jam 3 pagi.
-''')
