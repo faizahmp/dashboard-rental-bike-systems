@@ -71,7 +71,8 @@ def create_byhour_df(df):
 ############## END FUNCTION ##############
 
 
-df_bike = pd.read_csv("hour.csv")
+df_bike = pd.read_csv(
+    "https://raw.githubusercontent.com/faizahmp/dashboard-rental-bike-systems/main/dashboard/hour.csv")
 
 datetime_columns = ["dteday"]
 df_bike.sort_values(by="dteday", inplace=True)
